@@ -35,18 +35,16 @@ Sample Output
 def time_conversion(time):
     period = time[-2:]
     time = time[:-2]
-
-    hh, mm, ss = time.split(':')
-
+    hh,mm,ss = time.split(':')
     if period == 'PM':
         if hh != '12':
             hh = str(int(hh) + 12)
     else:
         if hh == '12':
-            hh == '00'
-    
+            hh = '00'
     militar_time = f"{hh}:{mm}:{ss}"
     return militar_time
+        
 
 time = '07:05:45PM'
 print(time_conversion(time))
